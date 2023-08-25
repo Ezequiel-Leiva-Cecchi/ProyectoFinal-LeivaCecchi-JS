@@ -373,29 +373,23 @@ input:valid~label {
 #carrito-lista {
 	list-style-type: none;
 	padding: 0;
+	border: 1px solid #ccc;
 	display: flex;
 	flex-direction: column;
 }
 
 #carrito-lista li {
 	margin: 10px 0;
+	list-style: none;
 	padding: 10px;
-	border: 1px solid #ccc;
-	display: flex;
-	align-items: center;
+	display: grid;
+	grid-template-columns: 30% 30% 30% 10%;
+
 }
 
 .eliminar {
 	margin-left: auto;
 }
-
-#carrito-lista li {
-	display: flex;
-
-	list-style: none;
-
-}
-
 #carrito-lista li .eliminar {
 	border-radius: 20px;
 	padding: 1% 2%;
@@ -573,7 +567,7 @@ input {
 
 /* Footer */
 /* Media queries */
-@media screen and (max-width:1216px) {
+@media screen and (max-width:995px) {
 
 	/*Encabezado */
 	.menu-abrir {

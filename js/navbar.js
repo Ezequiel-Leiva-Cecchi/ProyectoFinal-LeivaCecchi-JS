@@ -1,8 +1,11 @@
 // Selecciona un elemento del DOM y lo almacena en una variables
+
 let nav = document.querySelector("#nav");
 let abrir = document.querySelector("#abrir");
 let cerrar = document.querySelector("#cerrar");
+let numerito = document.getElementById(`numeroDeCarrito`);
 let productsBotons = document.getElementById(`boton-productos`);
+numerito.textContent =  JSON.parse(localStorage.getItem("cantidad")) || 0
 // Menu hamburguesa funcionalidad
 abrir.addEventListener("click", () => {
     nav.classList.add("visible");
@@ -11,6 +14,8 @@ cerrar.addEventListener("click", () => {
     nav.classList.remove("visible");
 })
 // Codigo para mostrar cada categoria de productos
+
+// revise la cantidad en localhost y cambie el valor que hay al lado de la imagen del carrito
 productsBotons.innerHTML = `
 <a href>Productos</a>
 <ul class="menu-vertical">
@@ -24,3 +29,4 @@ productsBotons.innerHTML = `
     <button id="Asus" class="boton-categoria">Asus</button>
 </li>
 </ul>`;
+
