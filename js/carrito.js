@@ -22,7 +22,21 @@ function vaciarCarrito() {
     mostrarProductosEnCarrito();
 }
 
-borrarDeCarrito.onclick = vaciarCarrito;
+borrarDeCarrito.addEventListener(`click`,() =>{
+    Swal.fire({
+        icon: 'success',
+        title: 'Se vacio el carrito con exito',
+        text: 'Se ha vaciado el carrito con exito'
+    });
+    if (carrito.length === 0) {
+        Swal.fire({
+            icon: 'error',
+            title: 'No hay ningún producto en el carrito',
+            text: 'No se ha encontrado ningun producto'
+        });
+    }
+     vaciarCarrito();
+}) 
 
 // Evento en el que simula comprar los productos agregados al carrito
 botonComprar.addEventListener("click", () => {
@@ -31,12 +45,21 @@ botonComprar.addEventListener("click", () => {
         title: 'Compra Realizada',
         text: 'Se ha realizado la compra exitosamente'
     });
+    if (carrito.length === 0) {
+        Swal.fire({
+            icon: 'error',
+            title: 'No hay ningún producto en el carrito',
+            text: 'Añada un producto que quiera y vuelva a intentar'
+        });
+    }
     vaciarCarrito();
 });
+
 
 // Funcion utilizada para mostrar los productos que se seleccionaron
 function mostrarProductosEnCarrito() {
     let carritoLista = document.getElementById('carrito-lista');
+    let precioTotal = document.createElement('div');
 
     carritoLista.innerHTML = '';
 
@@ -48,18 +71,26 @@ function mostrarProductosEnCarrito() {
 
     carrito.forEach((producto, index) => {
         let li = document.createElement('li');
-        let precioTotal = document.createElement(`div`)
-        li.innerHTML += `
-    <img style="width: 92px" src = "${producto.image}">
-    <h6 >${producto.titulo}</h6>
-    <p class="product-price">$${producto.precio}</p>
-    <button class="eliminar" onclick="eliminarProducto(${index})">Eliminar</button>`;
-    precioTotal.innerHTML += `
-    <p>Su precio total es de:$${obtenerTotal(carrito)}</p>`; 
+
+        li.innerHTML = `
+            <img style="width: 92px" src="${producto.image}">
+            <h6>${producto.titulo}</h6>
+            <p class="product-price">$${producto.precio}</p>
+            <button class="eliminar" onclick="eliminarProducto(${index})">Eliminar</button>`;
         carritoLista.appendChild(li);
-        carritoLista.appendChild(precioTotal);
     });
+
+    // Agregar el precio total una vez que todos los productos han sido agregados al carrito
+    precioTotal.innerHTML = `
+<p>Su precio total es de: $${obtenerTotal(carrito)}</p>`;
+    carritoLista.appendChild(precioTotal);
+    if (carrito.length === 0) {
+        precioTotal.style.display = 'none';
+    } else {
+        precioTotal.style.display = 'block';
+    }
 }
+
 
 // Funcion que agrega un boton para eliminar los productos
 function eliminarProducto(index) {
