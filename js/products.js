@@ -1,16 +1,14 @@
-let num = document.getElementById(`numeroDeCarrito`);
+let numeritoDeCarrito = document.getElementById(`numeroDeCarrito`);
 let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-
 const cartItem = document.getElementById("cartItems");
-num.textContent =  JSON.parse(localStorage.getItem("cantidad")) || 0
+numeritoDeCarrito.textContent =  JSON.parse(localStorage.getItem("cantidad")) || 0
 
-
-
+// Carga datos desde un archivo JSON de manera asíncrona 
 async function loadJSON() {
   const res = await fetch('./productos.json');
   return await res.json();
 }
-
+// Aca se esta utilizando la funcion asincronica
 loadJSON().then(products => {
   const contenedor = document.getElementById("contentProducts");
   for (let i = 0; i < products.length; i++) {
@@ -33,8 +31,8 @@ function agregarAlCarrito(i) {
     producto.image = "."+producto.image
     carrito.push(producto);
     localStorage.setItem('carrito', JSON.stringify(carrito));
-    // Actualiza el num del carrito después de actualizar el carrito
-    num.textContent = carrito.length;
+    // Actualiza el numerito al lado del carrito después de actualizar el carrito
+    numeritoDeCarrito.textContent = carrito.length;
     localStorage.setItem(`cantidad`,JSON.stringify(carrito.length));
    
   });
