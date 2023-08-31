@@ -154,7 +154,12 @@ header {
 .product .product-price {
 	font-size: 20px;
 }
-
+.product .product-price{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
 .product:hover img {
 	scale: 1.1;
 }
@@ -386,15 +391,13 @@ input:valid~label {
 	grid-template-columns: 30% 30% 30% 10%;
 
 }
-
-.eliminar {
-	margin-left: auto;
+.eliminar{
+	background-color: transparent;
+	border: transparent;
 }
-#carrito-lista li .eliminar {
-	border-radius: 20px;
-	padding: 1% 2%;
+.eliminar:hover{
+	color: red;
 }
-
 .content-botones {
 	display: flex;
 	flex-direction: row;

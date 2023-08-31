@@ -7,7 +7,8 @@
             "nombre": "lenovos",
             "id": "lenovo"
         },
-        "precio": 799999
+        "precio": 799999,
+        "stock": 10
     },
     {
         "id": "lenovo-02",
@@ -17,7 +18,8 @@
             "nombre": "lenovos",
             "id": "lenovo"
         },
-        "precio": 203039
+        "precio": 203039,
+        "stock": 10
     },
     {
         "id": "lenovo-03",
@@ -27,7 +29,8 @@
             "nombre": "lenovos",
             "id": "lenovo"
         },
-        "precio": 877351
+        "precio": 877351,
+        "stock": 10
     },
     {
         "id": "lenovo-04",
@@ -37,7 +40,8 @@
             "nombre": "lenovos",
             "id": "lenovo"
         },
-        "precio": 999998
+        "precio": 999998,
+        "stock": 10
     },
     {
         "id": "lenovo-05",
@@ -47,7 +51,8 @@
             "nombre": "lenovos",
             "id": "lenovo"
         },
-        "precio": 685999
+        "precio": 685999,
+        "stock": 10
     },
     {
         "id": "lenovo-06",
@@ -57,7 +62,8 @@
             "nombre": "lenovos",
             "id": "lenovo"
         },
-        "precio": 799999
+        "precio": 799999,
+        "stock": 10
     },
     {
         "id": "lenovo-07",
@@ -67,7 +73,8 @@
             "nombre": "lenovos",
             "id": "lenovo"
         },
-        "precio": 825999
+        "precio": 825999,
+        "stock": 10
     },
     {
         "id": "lenovo-08",
@@ -77,7 +84,8 @@
             "nombre": "lenovos",
             "id": "lenovo"
         },
-        "precio": 856999
+        "precio": 856999,
+        "stock": 10
     },
     {
         "id": "Asus-01",
@@ -87,7 +95,8 @@
             "nombre": "Asus",
             "id": "asus"
         },
-        "precio": 729999
+        "precio": 729999,
+        "stock": 10
     },
     {
         "id": "Asus-02",
@@ -97,7 +106,8 @@
             "nombre": "Asus",
             "id": "asus"
         },
-        "precio": 999600
+        "precio": 999600,
+        "stock": 10
     },
     {
         "id": "Asus-03",
@@ -107,7 +117,8 @@
             "nombre": "Asus",
             "id": "asus"
         },
-        "precio": 999689
+        "precio": 999689,
+        "stock": 10
     },
     {
         "id": "Asus-04",
@@ -117,7 +128,8 @@
             "nombre": "Asus",
             "id": "asus"
         },
-        "precio": 864999
+        "precio": 864999,
+        "stock": 10
     },
     {
         "id": "Asus-05",
@@ -127,7 +139,8 @@
             "nombre": "Asus",
             "id": "asus"
         },
-        "precio": 609804
+        "precio": 609804,
+        "stock": 10
     },
     {
         "id": "Asus-06",
@@ -137,7 +150,8 @@
             "nombre": "Asus",
             "id": "asus"
         },
-        "precio": 579999
+        "precio": 579999,
+        "stock": 10
     },
     {
         "id": "Asus-07",
@@ -147,7 +161,8 @@
             "nombre": "Asus",
             "id": "asus"
         },
-        "precio": 686262
+        "precio": 686262,
+        "stock": 10
     },
     {
         "id": "Asus-08",
@@ -157,7 +172,8 @@
             "nombre": "Asus",
             "id": "asus"
         },
-        "precio": 239999
+        "precio": 239999,
+        "stock": 10
     },
     {
         "id": "HP-01",
@@ -167,7 +183,8 @@
             "nombre": "HPs",
             "id": "HP"
         },
-        "precio": 344999
+        "precio": 344999,
+        "stock": 10
     },
     {
         "id": "HP-02",
@@ -177,7 +194,8 @@
             "nombre": "HPs",
             "id": "HP"
         },
-        "precio": 229999
+        "precio": 229999,
+        "stock": 10
     },
     {
         "id": "HP-03",
@@ -187,7 +205,8 @@
             "nombre": "HPs",
             "id": "HP"
         },
-        "precio": 820999
+        "precio": 820999,
+        "stock": 10
     },
     {
         "id": "HP-04",
@@ -197,7 +216,8 @@
             "nombre": "HPs",
             "id": "HP"
         },
-        "precio": 903067
+        "precio": 903067,
+        "stock": 10
     },
     {
         "id": "HP-05",
@@ -207,7 +227,8 @@
             "nombre": "HPs",
             "id": "HP"
         },
-        "precio": 672956
+        "precio": 672956,
+        "stock": 10
     },
     {
         "id": "HP-06",
@@ -217,7 +238,8 @@
             "nombre": "HPs",
             "id": "HP"
         },
-        "precio": 937940
+        "precio": 937940,
+        "stock": 10
     },
     {
         "id": "HP-07",
@@ -227,7 +249,8 @@
             "nombre": "HPs",
             "id": "HP"
         },
-        "precio": 622665
+        "precio": 622665,
+        "stock": 10
     },
     {
         "id": "HP-08",
@@ -237,6 +260,7 @@
             "nombre": "HPs",
             "id": "HP"
         },
-        "precio": 438810
+        "precio": 438810,
+        "stock": 10
     }
 ]
