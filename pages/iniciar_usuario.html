@@ -21,13 +21,13 @@
 <body>
     <header>
         <a href="../index.html"><img class="Logo" src="../assets/Falcon.gaming.png" alt="Logotipo de la pagina"></a>
-        <button id="abrir" class="menu-abrir">
+        <button id="menuAbrir" class="menu-abrir">
             <div></div>
             <div></div>
             <div></div>
         </button>
         <nav class="nav" id="nav">
-            <button id="cerrar" class="menu-cerrar"><svg class="close" xmlns="http://www.w3.org/2000/svg" width="16"
+            <button id="menuCerrar" class="menu-cerrar"><svg class="close" xmlns="http://www.w3.org/2000/svg" width="16"
                     height="16" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
                     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
                     <path
@@ -37,11 +37,16 @@
                 <li>
                     <a href="../index.html">Inicio</a>
                 </li>
-                <li id="boton-productos">
-                    <!-- se rellena con js -->
+                <li>
+                    <a href="">Productos</a>
+                    <ul class="menu-vertical">
+                        <li><a href="lenovo.html">Lenovo</a></li>
+                        <li><a href="hp.html">HP</a></li>
+                        <li><a href="asus.html">Asus</a></li>
+                    </ul>
                 </li>
                 <li>
-                    <a href="">Inscripción</a>
+                    <a id="menu-boton" href="">Inscripción</a>
                     <ul class="menu-vertical">
                         <li><a href="iniciar_usuario.html">Inicio sesion</a></li>
                         <li><a href="crear_usuario.html">Crear sesion</a></li>
@@ -56,6 +61,7 @@
                 </li>
             </ul>
         </nav>
+
     </header>
     <main>
         <section class="usuario">

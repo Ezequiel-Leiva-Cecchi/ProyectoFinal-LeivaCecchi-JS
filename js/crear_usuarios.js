@@ -6,9 +6,6 @@ formHtml.addEventListener(`submit`, (event) => {
     const usuario = formulario.elements["textUsuario"].value
     const password = btoa(formulario.elements["textPassword"].value);
     const confirmPassword = btoa(formulario.elements["confirmPassword"].value);
-    // atob() HACE EL DECODE DE btoa()
-
-    console.log(password + confirmPassword)
     if (emailValidator(email) && validarUsuario(usuario) && checkPasswordSent(password, confirmPassword)) {
         const dataForm = { email, usuario, password };
         localStorage.setItem("dataOfTheForm", JSON.stringify(dataForm));
