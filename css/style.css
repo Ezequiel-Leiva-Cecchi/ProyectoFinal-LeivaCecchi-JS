@@ -629,7 +629,7 @@ input {
 	}
 
 }
-
+/* Media querries */
 @media screen and (max-width:1079px) {
 	.lmb-subtitulo {
 		font-size: 20px;
