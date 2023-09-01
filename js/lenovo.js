@@ -28,11 +28,17 @@ function agregarAlCarrito(i) {
     loadJSON().then(data => {
       let producto = data[i]
       producto.image = "."+producto.image
-      carrito.push(producto);
+      const index = carrito.findIndex(item => item.id === producto.id);
+      if (index !== -1) {
+        carrito[index].cantidad++;
+      } else {
+        // Si no está en el carrito, agregarlo con cantidad 1
+        carrito.push({ ...producto, cantidad: 1 });
+      }
+      // Actualizar los datos en el almacenamiento local
       localStorage.setItem('carrito', JSON.stringify(carrito));
-      // Actualiza el numerito al lado del carrito después de actualizar el carrito
       numeritoDeCarrito.textContent = carrito.length;
-      localStorage.setItem(`cantidad`,JSON.stringify(carrito.length));
+      localStorage.setItem(`cantidad`, carrito.length);
      
     });
     Toastify({
