@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Falcon Lab, una experiencia de e-commerce de notebooks construida con JavaScript puro.">
-  <meta name="theme-color" content="#0b0d10">
+  <meta name="description" content="Falcon Lab, una experiencia interactiva para descubrir y comparar notebooks, construida con JavaScript puro.">
+  <meta name="theme-color" content="#f5f7ff">
   <title>Falcon Lab · Encontrá tu próxima notebook</title>
   <link rel="icon" type="image/png" href="assets/Falcon.gaming.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,209 +14,52 @@
 </head>
 <body>
   <a class="skip-link" href="#catalogo">Saltar al catálogo</a>
-
-  <div class="demo-bar">Proyecto de portfolio · precios y disponibilidad ilustrativos</div>
-
   <header class="site-header" id="inicio">
     <div class="shell header-inner">
       <a class="brand" href="#inicio" aria-label="Falcon Lab, inicio">
-        <span class="brand-mark">F</span>
+        <span class="brand-symbol" aria-hidden="true"><svg viewBox="0 0 64 64" role="img"><path d="M8 39c14-2 23-10 31-25 4 12 10 18 17 21-10 1-18 4-24 10-7 7-14 10-24 9 6-4 10-9 12-15-4 1-8 1-12 0Z"/><path d="M26 35c8-2 15-7 21-15-2 9-7 17-15 23" class="brand-cut"/></svg></span>
         <span><b>FALCON</b><small>LAB</small></span>
       </a>
-
       <button class="menu-button" id="menuButton" type="button" aria-expanded="false" aria-controls="mainNav">Menú</button>
-
-      <nav class="main-nav" id="mainNav" aria-label="Navegación principal">
-        <a href="#catalogo">Notebooks</a>
-        <a href="#por-uso">Elegir por uso</a>
-        <a href="#experiencia">La experiencia</a>
-      </nav>
-
+      <nav class="main-nav" id="mainNav" aria-label="Navegación principal"><a href="#descubrir">Descubrir</a><a href="#catalogo">Catálogo</a><a href="#experiencia">Experiencia</a></nav>
       <div class="header-actions">
-        <button class="icon-button" id="favoritesButton" type="button" aria-label="Mostrar favoritos" title="Favoritos">
-          <span aria-hidden="true">♡</span><b id="favoriteCount">0</b>
-        </button>
-        <button class="cart-button" id="openCart" type="button" aria-label="Abrir carrito">
-          Carrito <b id="cartCount">0</b>
-        </button>
+        <button class="icon-button" id="favoritesButton" type="button" aria-label="Mostrar favoritos" aria-pressed="false"><span aria-hidden="true">♡</span><b id="favoriteCount">0</b></button>
+        <button class="cart-button" id="openCart" type="button" aria-label="Abrir carrito">Carrito <b id="cartCount">0</b></button>
       </div>
     </div>
   </header>
-
   <main>
-    <section class="hero shell">
-      <div class="hero-copy">
-        <span class="eyebrow">Notebook store · rebuilt in vanilla JS</span>
-        <h1>La notebook correcta cambia <em>cómo</em> hacés todo.</h1>
-        <p>Explorá el catálogo, filtrá por lo que realmente necesitás y compará opciones sin perderte entre veinte pestañas.</p>
-        <div class="hero-actions">
-          <a class="button" href="#catalogo">Explorar catálogo</a>
-          <button class="text-button" id="openFeatured" type="button">Ver la destacada →</button>
-        </div>
-        <div class="hero-proof" aria-label="Características del proyecto">
-          <span><strong>24</strong> modelos</span>
-          <span><strong>3</strong> marcas</span>
-          <span><strong>0</strong> frameworks</span>
-        </div>
-      </div>
-
-      <div class="hero-product" id="heroProduct" aria-live="polite"></div>
+    <section class="hero shell reveal">
+      <div class="hero-copy"><span class="eyebrow">Elegí por experiencia, no por ruido técnico</span><h1>Una notebook que <span class="gradient-text">encaje con vos.</span></h1><p>Explorá, compará y entendé qué ofrece cada equipo sin abrir veinte pestañas. Falcon Lab convierte un catálogo en una experiencia interactiva.</p><div class="hero-actions"><a class="button button-primary" href="#catalogo">Explorar notebooks</a><button class="button button-ghost" id="openFeatured" type="button">Ver destacada</button></div><div class="hero-proof" aria-label="Resumen del proyecto"><span><strong>24</strong><small>modelos</small></span><span><strong>3</strong><small>marcas</small></span><span><strong>100%</strong><small>JavaScript</small></span></div></div>
+      <div class="hero-stage" id="heroStage"><div class="hero-orbit orbit-a"></div><div class="hero-orbit orbit-b"></div><div class="hero-product" id="heroProduct" aria-live="polite"></div><div class="floating-chip chip-a">Compará specs</div><div class="floating-chip chip-b">Guardá favoritos</div></div>
     </section>
-
-    <section class="brand-strip" aria-label="Marcas disponibles">
-      <div class="shell brand-strip-inner">
-        <span>LENOVO</span><i></i><span>ASUS</span><i></i><span>HP</span><i></i><span>JAVASCRIPT</span>
-      </div>
-    </section>
-
-    <section class="use-section shell" id="por-uso">
-      <div class="section-heading">
-        <div>
-          <span class="eyebrow">Empezá por vos, no por la ficha técnica</span>
-          <h2>¿Para qué la necesitás?</h2>
-        </div>
-        <p>Elegí un perfil y el catálogo se filtra automáticamente.</p>
-      </div>
-
-      <div class="use-grid">
-        <button class="use-card" data-profile="Gaming" type="button">
-          <span class="use-number">01</span><b>Gaming</b><p>Potencia y líneas pensadas para jugar.</p><span>Ver opciones →</span>
-        </button>
-        <button class="use-card" data-profile="Trabajo" type="button">
-          <span class="use-number">02</span><b>Trabajo</b><p>Equipos sobrios para productividad diaria.</p><span>Ver opciones →</span>
-        </button>
-        <button class="use-card" data-profile="Creatividad" type="button">
-          <span class="use-number">03</span><b>Creatividad</b><p>Formatos versátiles y líneas premium.</p><span>Ver opciones →</span>
-        </button>
-        <button class="use-card" data-profile="Uso diario" type="button">
-          <span class="use-number">04</span><b>Uso diario</b><p>Opciones simples para estudiar y navegar.</p><span>Ver opciones →</span>
-        </button>
-      </div>
-    </section>
-
-    <section class="catalog-section" id="catalogo">
-      <div class="shell">
-        <div class="section-heading catalog-heading">
-          <div>
-            <span class="eyebrow">Catálogo interactivo</span>
-            <h2>Encontrá tu equipo</h2>
-          </div>
-          <p id="resultsLabel">Cargando catálogo…</p>
-        </div>
-
-        <div class="catalog-toolbar">
-          <label class="search-field">
-            <span>Buscar</span>
-            <input id="searchInput" type="search" placeholder="Modelo o marca…" autocomplete="off">
-          </label>
-
-          <label>
-            <span>Marca</span>
-            <select id="brandFilter">
-              <option value="all">Todas</option>
-              <option value="Lenovo">Lenovo</option>
-              <option value="Asus">Asus</option>
-              <option value="HP">HP</option>
-            </select>
-          </label>
-
-          <label>
-            <span>Perfil</span>
-            <select id="profileFilter">
-              <option value="all">Todos</option>
-              <option value="Gaming">Gaming</option>
-              <option value="Trabajo">Trabajo</option>
-              <option value="Creatividad">Creatividad</option>
-              <option value="Uso diario">Uso diario</option>
-            </select>
-          </label>
-
-          <label>
-            <span>Ordenar</span>
-            <select id="sortFilter">
-              <option value="featured">Destacados</option>
-              <option value="price-asc">Menor precio</option>
-              <option value="price-desc">Mayor precio</option>
-              <option value="name">A–Z</option>
-            </select>
-          </label>
-
-          <button class="filter-reset" id="resetFilters" type="button">Limpiar</button>
-        </div>
-
-        <div class="active-filter" id="activeFilter" hidden></div>
-        <div class="product-grid" id="productGrid" aria-live="polite"></div>
-        <div class="empty-state" id="emptyState" hidden>
-          <span>⌕</span>
-          <h3>No encontramos esa notebook</h3>
-          <p>Probá con otra búsqueda o limpiá los filtros.</p>
-          <button class="button button-secondary" id="emptyReset" type="button">Ver todo</button>
-        </div>
-      </div>
-    </section>
-
-    <section class="experience shell" id="experiencia">
-      <div class="experience-copy">
-        <span class="eyebrow">El proyecto, hoy</span>
-        <h2>De entrega de curso a experiencia de e-commerce.</h2>
-      </div>
-      <div class="experience-grid">
-        <article><span>01</span><h3>Catálogo único</h3><p>Una sola fuente de datos y lógica compartida para todas las marcas.</p></article>
-        <article><span>02</span><h3>Estado persistente</h3><p>Carrito y favoritos sobreviven a la recarga mediante localStorage.</p></article>
-        <article><span>03</span><h3>Comparador</h3><p>Seleccioná hasta tres equipos y contrastalos sin abandonar la página.</p></article>
-        <article><span>04</span><h3>Responsive real</h3><p>Interfaz pensada desde desktop hasta pantallas chicas, sin Bootstrap.</p></article>
-      </div>
-    </section>
-
-    <section class="cta-section">
-      <div class="shell cta-inner">
-        <div><span class="eyebrow">¿Todavía dudando?</span><h2>Compará hasta tres modelos lado a lado.</h2></div>
-        <button class="button button-light" id="openCompareCta" type="button">Abrir comparador <b id="compareCountCta">0</b>/3</button>
-      </div>
-    </section>
+    <section class="marquee" aria-label="Tecnologías y marcas"><div class="marquee-track"><span>LENOVO</span><i>✦</i><span>ASUS</span><i>✦</i><span>HP</span><i>✦</i><span>VANILLA JS</span><i>✦</i><span>LENOVO</span><i>✦</i><span>ASUS</span><i>✦</i><span>HP</span><i>✦</i><span>VANILLA JS</span><i>✦</i></div></section>
+    <section class="discover shell reveal" id="descubrir"><div class="section-heading"><div><span class="eyebrow">Encontrá tu perfil</span><h2>Empezá por lo que querés hacer.</h2></div><p>Las tarjetas reaccionan al cursor y filtran el catálogo con un toque. En celular funcionan igual mediante tap.</p></div><div class="use-grid">
+      <button class="use-card use-gaming" data-profile="Gaming" type="button"><span class="use-icon">⚡</span><span class="use-index">01</span><div><b>Gaming</b><p>GPU dedicada, potencia y refrigeración.</p></div><span class="use-link">Explorar →</span></button>
+      <button class="use-card use-work" data-profile="Trabajo" type="button"><span class="use-icon">⌘</span><span class="use-index">02</span><div><b>Trabajo</b><p>Productividad, autonomía y confiabilidad.</p></div><span class="use-link">Explorar →</span></button>
+      <button class="use-card use-creative" data-profile="Creatividad" type="button"><span class="use-icon">✦</span><span class="use-index">03</span><div><b>Creatividad</b><p>Pantalla, flexibilidad y rendimiento visual.</p></div><span class="use-link">Explorar →</span></button>
+      <button class="use-card use-daily" data-profile="Uso diario" type="button"><span class="use-icon">☀</span><span class="use-index">04</span><div><b>Uso diario</b><p>Estudio, videollamadas y tareas cotidianas.</p></div><span class="use-link">Explorar →</span></button>
+    </div></section>
+    <section class="catalog-section" id="catalogo"><div class="shell"><div class="catalog-top reveal"><div><span class="eyebrow">Catálogo interactivo</span><h2>Encontrá tu equipo.</h2><p id="resultsLabel">Cargando catálogo…</p></div><button class="mobile-filter-button" id="openFilters" type="button">Filtros <span id="filterBadge">0</span></button></div><div class="catalog-layout">
+      <aside class="filter-panel" id="filterPanel" aria-label="Filtros del catálogo"><div class="filter-panel-head"><div><span class="eyebrow">Afiná la búsqueda</span><h3>Filtros</h3></div><button class="filter-close" id="closeFilters" type="button" aria-label="Cerrar filtros">×</button></div>
+        <label class="filter-field search-field"><span>Buscar</span><input id="searchInput" type="search" placeholder="Modelo o marca…" autocomplete="off"></label>
+        <label class="filter-field"><span>Marca</span><select id="brandFilter"><option value="all">Todas</option><option value="Lenovo">Lenovo</option><option value="Asus">Asus</option><option value="HP">HP</option></select></label>
+        <label class="filter-field"><span>Perfil</span><select id="profileFilter"><option value="all">Todos</option><option value="Gaming">Gaming</option><option value="Trabajo">Trabajo</option><option value="Creatividad">Creatividad</option><option value="Uso diario">Uso diario</option></select></label>
+        <label class="filter-field"><span>Memoria RAM</span><select id="ramFilter"><option value="all">Cualquiera</option><option value="8">8 GB</option><option value="16">16 GB</option><option value="32">32 GB</option></select></label>
+        <label class="filter-field"><span>Almacenamiento</span><select id="storageFilter"><option value="all">Cualquiera</option><option value="256">256 GB</option><option value="512">512 GB</option><option value="1024">1 TB</option></select></label>
+        <label class="filter-field"><span>Ordenar</span><select id="sortFilter"><option value="featured">Recomendadas</option><option value="price-asc">Menor precio</option><option value="price-desc">Mayor precio</option><option value="name">Nombre A–Z</option></select></label>
+        <button class="button button-soft" id="resetFilters" type="button">Limpiar filtros</button>
+      </aside>
+      <div class="catalog-content"><div class="active-filter" id="activeFilter" hidden></div><div class="product-grid" id="productGrid" aria-live="polite"></div><div class="empty-state" id="emptyState" hidden><span>⌕</span><h3>No encontramos esa notebook</h3><p>Probá otra búsqueda o limpiá los filtros.</p><button class="button button-primary" id="emptyReset" type="button">Ver todo</button></div></div>
+    </div></div><div class="filter-backdrop" id="filterBackdrop" hidden></div></section>
+    <section class="experience shell reveal" id="experiencia"><div class="experience-copy"><span class="eyebrow">Más que una grilla de productos</span><h2>Una tienda que te invita a tocar cosas.</h2><p>Hover, profundidad, estados persistentes, comparador y detalles técnicos convierten el proyecto en una experiencia de portfolio, no en una entrega estática.</p></div><div class="experience-grid"><article><span>01</span><h3>Detalle real</h3><p>Procesador, RAM, almacenamiento, GPU, pantalla, batería y peso en cada producto.</p></article><article><span>02</span><h3>Comparador</h3><p>Hasta tres modelos lado a lado con las especificaciones que realmente importan.</p></article><article><span>03</span><h3>Microinteracciones</h3><p>Cards con profundidad, reveals al hacer scroll y feedback inmediato en cada acción.</p></article><article><span>04</span><h3>Mobile first</h3><p>Filtros en drawer, acciones táctiles grandes y navegación sin depender de hover.</p></article></div></section>
+    <section class="compare-cta reveal"><div class="shell compare-cta-inner"><div><span class="eyebrow">No elijas a ciegas</span><h2>Poné tus candidatas frente a frente.</h2></div><button class="button button-white" id="openCompareCta" type="button">Abrir comparador <b id="compareCountCta">0</b>/3</button></div></section>
   </main>
-
-  <footer class="site-footer">
-    <div class="shell footer-grid">
-      <div>
-        <a class="brand footer-brand" href="#inicio"><span class="brand-mark">F</span><span><b>FALCON</b><small>LAB</small></span></a>
-        <p>Proyecto final de JavaScript reimaginado como storefront interactivo.</p>
-      </div>
-      <div><b>Explorar</b><a href="#catalogo">Catálogo</a><a href="#por-uso">Por uso</a><a href="#experiencia">Proyecto</a></div>
-      <div><b>Stack</b><span>HTML semántico</span><span>CSS moderno</span><span>JavaScript ES6+</span></div>
-      <div><b>Autor</b><a href="https://github.com/Ezequiel-Leiva-Cecchi" target="_blank" rel="noopener">Ezequiel Leiva Cecchi ↗</a><span>Buenos Aires, Argentina</span></div>
-    </div>
-    <div class="shell footer-bottom"><span>© <span id="currentYear"></span> Falcon Lab</span><span>Demo educativa · no procesa pagos reales</span></div>
-  </footer>
-
-  <div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
-  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true" aria-label="Carrito de compras">
-    <div class="drawer-head"><div><span class="eyebrow">Tu selección</span><h2>Carrito</h2></div><button class="close-button" id="closeCart" type="button" aria-label="Cerrar carrito">×</button></div>
-    <div class="cart-items" id="cartItems"></div>
-    <div class="cart-footer">
-      <div class="cart-total"><span>Total ilustrativo</span><strong id="cartTotal">$0</strong></div>
-      <button class="button" id="checkoutButton" type="button">Finalizar demo</button>
-      <button class="text-button danger" id="clearCart" type="button">Vaciar carrito</button>
-    </div>
-  </aside>
-
-  <div class="compare-dock" id="compareDock" hidden>
-    <span><b id="compareCount">0</b> seleccionadas para comparar</span>
-    <div><button class="text-button" id="clearCompare" type="button">Limpiar</button><button class="button button-small" id="openCompare" type="button">Comparar</button></div>
-  </div>
-
-  <dialog class="product-dialog" id="productDialog">
-    <button class="dialog-close" data-close-dialog="productDialog" type="button" aria-label="Cerrar">×</button>
-    <div id="productDialogContent"></div>
-  </dialog>
-
-  <dialog class="compare-dialog" id="compareDialog">
-    <div class="dialog-header"><div><span class="eyebrow">Comparador</span><h2>Tus candidatos</h2></div><button class="dialog-close static" data-close-dialog="compareDialog" type="button" aria-label="Cerrar">×</button></div>
-    <div id="compareDialogContent"></div>
-  </dialog>
-
-  <div class="toast-region" id="toastRegion" aria-live="polite" aria-atomic="true"></div>
-
-  <script src="js/app.js" defer></script>
+  <footer class="site-footer"><div class="shell footer-grid"><div><a class="brand footer-brand" href="#inicio"><span class="brand-symbol" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M8 39c14-2 23-10 31-25 4 12 10 18 17 21-10 1-18 4-24 10-7 7-14 10-24 9 6-4 10-9 12-15-4 1-8 1-12 0Z"/><path d="M26 35c8-2 15-7 21-15-2 9-7 17-15 23" class="brand-cut"/></svg></span><span><b>FALCON</b><small>LAB</small></span></a><p>Proyecto final de JavaScript reimaginado como una experiencia interactiva de e-commerce.</p></div><div><b>Explorar</b><a href="#descubrir">Por uso</a><a href="#catalogo">Catálogo</a><a href="#experiencia">Proyecto</a></div><div><b>Construido con</b><span>HTML semántico</span><span>CSS moderno</span><span>JavaScript ES6+</span></div><div><b>Nota</b><span>Precios y configuraciones ilustrativas</span><span>No procesa pagos reales</span></div></div><div class="shell footer-bottom"><span>© <span id="currentYear"></span> Falcon Lab</span><a href="https://github.com/Ezequiel-Leiva-Cecchi" target="_blank" rel="noopener">GitHub ↗</a></div></footer>
+  <div class="drawer-backdrop" id="drawerBackdrop" hidden></div><aside class="cart-drawer" id="cartDrawer" aria-hidden="true" aria-label="Carrito de compras"><div class="drawer-head"><div><span class="eyebrow">Tu selección</span><h2>Carrito</h2></div><button class="close-button" id="closeCart" type="button" aria-label="Cerrar carrito">×</button></div><div class="cart-items" id="cartItems"></div><div class="cart-footer"><div class="cart-total"><span>Total ilustrativo</span><strong id="cartTotal">$0</strong></div><button class="button button-primary" id="checkoutButton" type="button">Finalizar demo</button><button class="text-button danger" id="clearCart" type="button">Vaciar carrito</button></div></aside>
+  <div class="compare-dock" id="compareDock" hidden><span><b id="compareCount">0</b> seleccionadas</span><div><button class="text-button" id="clearCompare" type="button">Limpiar</button><button class="button button-primary button-small" id="openCompare" type="button">Comparar</button></div></div>
+  <dialog class="product-dialog" id="productDialog"><button class="dialog-close" data-close-dialog="productDialog" type="button" aria-label="Cerrar">×</button><div id="productDialogContent"></div></dialog>
+  <dialog class="compare-dialog" id="compareDialog"><div class="dialog-header"><div><span class="eyebrow">Comparador</span><h2>Tus candidatas</h2></div><button class="dialog-close static" data-close-dialog="compareDialog" type="button" aria-label="Cerrar">×</button></div><div id="compareDialogContent"></div></dialog>
+  <div class="toast-region" id="toastRegion" aria-live="polite" aria-atomic="true"></div><script src="js/app.js" defer></script>
 </body>
 </html>
