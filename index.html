@@ -1,188 +1,222 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Explora nuestra tienda en línea de laptops de última generación, donde la potencia y el estilo se fusionan. Encuentra laptops de marcas reconocidas, diseñadas para rendimiento y elegancia. Nuestra interfaz fácil de usar y expertos en tecnología te guiarán en tu elección. Además de laptops excepcionales, ofrecemos accesorios y servicios para enriquecer tu experiencia. Únete a nosotros para descubrir la perfecta combinación de innovación y conveniencia en las compras en línea de laptops. Tu próximo nivel de productividad y entretenimiento está aquí.">
-    <meta name="keywords" content="Venta,computadora,Falcon gaming,Gaming,laptops">
-    <title>Falcon gaming/crear usuario</title>
-    <!--Link favicon-->
-    <link rel="icon" type="image/x-icon" href="../assets/Falcon.gaming.png">
-    <!-- link de bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <!-- link del css -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Falcon Lab, una experiencia de e-commerce de notebooks construida con JavaScript puro.">
+  <meta name="theme-color" content="#0b0d10">
+  <title>Falcon Lab · Encontrá tu próxima notebook</title>
+  <link rel="icon" type="image/png" href="assets/Falcon.gaming.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-    <header>
-        <a href="index.html"><img class="Logo" src="assets/Falcon.gaming.png" alt="Logotipo de la pagina"></a>
-        <button id="menuAbrir" class="menu-abrir">
-            <div></div>
-            <div></div>
-            <div></div>
+  <a class="skip-link" href="#catalogo">Saltar al catálogo</a>
+
+  <div class="demo-bar">Proyecto de portfolio · precios y disponibilidad ilustrativos</div>
+
+  <header class="site-header" id="inicio">
+    <div class="shell header-inner">
+      <a class="brand" href="#inicio" aria-label="Falcon Lab, inicio">
+        <span class="brand-mark">F</span>
+        <span><b>FALCON</b><small>LAB</small></span>
+      </a>
+
+      <button class="menu-button" id="menuButton" type="button" aria-expanded="false" aria-controls="mainNav">Menú</button>
+
+      <nav class="main-nav" id="mainNav" aria-label="Navegación principal">
+        <a href="#catalogo">Notebooks</a>
+        <a href="#por-uso">Elegir por uso</a>
+        <a href="#experiencia">La experiencia</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-button" id="favoritesButton" type="button" aria-label="Mostrar favoritos" title="Favoritos">
+          <span aria-hidden="true">♡</span><b id="favoriteCount">0</b>
         </button>
-        <nav class="nav" id="nav">
-            <button id="menuCerrar" class="menu-cerrar"><svg class="close" xmlns="http://www.w3.org/2000/svg" width="16"
-                    height="16" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
-                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                    <path
-                        d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
-                </svg></button>
-            <ul class="nav-list">
-                <li>
-                    <a href="index.html">Inicio</a>
-                </li>
-                <li>
-                    <a href="">Productos</a>
-                    <ul class="menu-vertical">
-                        <li><a href="pages/lenovo.html">Lenovo</a></li>
-                        <li><a href="pages/hp.html">HP</a></li>
-                        <li><a href="pages/asus.html">Asus</a></li>
-                    </ul>
-                    <!-- se rellena con js -->
-                </li>
-                <li>
-                    <a id="menu-boton" href="">Inscripción</a>
-                    <ul class="menu-vertical">
-                        <li><a href="pages/iniciar_usuario.html">Inicio sesion</a></li>
-                        <li><a href="pages/crear_usuario.html">Crear sesion</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a class="carritoNav" href="pages/carrito.html">Carrito <svg xmlns="http://www.w3.org/2000/svg"
-                            width="25" height="25" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
-                            <path
-                                d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
-                        </svg> <span id="numeroDeCarrito">0</span></a>
-                </li>
-            </ul>
-        </nav>
+        <button class="cart-button" id="openCart" type="button" aria-label="Abrir carrito">
+          Carrito <b id="cartCount">0</b>
+        </button>
+      </div>
+    </div>
+  </header>
 
-    </header>
-    <main>
-        <section class="products">
-            <h2 class="title">todos los productos</h2>
-            <div id="contentProducts" class="all-products">
-                <!-- Esto se va a completar con js -->
-            </div>
-        </section>
-        <div class="listing-module-bottom">
-            <h2 class="lmb-subtitulo">Las ventajas de tener una notebook</h2>
-            <div class="lmb-content">Las notebooks tienen una característica esencial que les da un valor especial
-                frente a otro tipo de computadoras como pueden ser una All in One o una PC de escritorio: son
-                transportables. Podés llevarlas con vos a donde sea que vayas y convertir casi cualquier lugar en tu
-                espacio de trabajo. Por otro lado, cuentan con una ventaja clave que es su capacidad de procesamiento y
-                almacenamiento de datos. Además, son mucho más cómodas para trabajar o realizar actividades como ver
-                películas y series o jugar videojuegos.
-            </div>
+  <main>
+    <section class="hero shell">
+      <div class="hero-copy">
+        <span class="eyebrow">Notebook store · rebuilt in vanilla JS</span>
+        <h1>La notebook correcta cambia <em>cómo</em> hacés todo.</h1>
+        <p>Explorá el catálogo, filtrá por lo que realmente necesitás y compará opciones sin perderte entre veinte pestañas.</p>
+        <div class="hero-actions">
+          <a class="button" href="#catalogo">Explorar catálogo</a>
+          <button class="text-button" id="openFeatured" type="button">Ver la destacada →</button>
         </div>
-    </main>
-    <footer>
-        <div class="pie-pagina">
-            <!--Metodos de pago-->
-            <div class="pago">
-                <h2>MEDIOS DE PAGO</h2>
-                <div>
-                    <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/visa@2x.png"
-                        data-src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/visa@2x.png"
-                        class="icon-logo ls-is-cached lazyloaded" alt="visa" width="32" height="20">
-                    <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/mastercard@2x.png"
-                        data-src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/mastercard@2x.png"
-                        class="icon-logo ls-is-cached lazyloaded" alt="mastercard" width="32" height="20">
-                    <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/amex@2x.png"
-                        data-src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/amex@2x.png"
-                        class="icon-logo ls-is-cached lazyloaded" alt="amex" width="32" height="20">
-                    <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/diners@2x.png"
-                        data-src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/diners@2x.png"
-                        class="icon-logo ls-is-cached lazyloaded" alt="diners" width="32" height="20">
-                    <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/paypal@2x.png"
-                        data-src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/paypal@2x.png"
-                        class="icon-logo ls-is-cached lazyloaded" alt="paypal" width="32" height="20">
-                    <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/banelco@2x.png"
-                        data-src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/banelco@2x.png"
-                        class="icon-logo ls-is-cached lazyloaded" alt="ar_banelco" width="32" height="20">
-                    <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/cabal@2x.png"
-                        data-src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/cabal@2x.png"
-                        class="icon-logo ls-is-cached lazyloaded" alt="ar_cabal" width="32" height="20">
-                    <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/tarjeta-naranja@2x.png"
-                        data-src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/tarjeta-naranja@2x.png"
-                        class="icon-logo ls-is-cached lazyloaded" alt="ar_tarjeta-naranja" width="32" height="20">
-                    <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/tarjeta-shopping@2x.png"
-                        data-src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/tarjeta-shopping@2x.png"
-                        class="icon-logo lazyloaded" alt="ar_tarjeta-shopping" width="32" height="20">
-                    <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/mercadopago@2x.png"
-                        data-src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/mercadopago@2x.png"
-                        class="icon-logo ls-is-cached lazyloaded" alt="mercadopago" width="32" height="20">
-                    <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/argencard@2x.png"
-                        data-src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/argencard@2x.png"
-                        class="icon-logo lazyloaded" alt="ar_argencard" width="32" height="20">
-                    <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/pagofacil@2x.png"
-                        data-src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/pagofacil@2x.png"
-                        class="icon-logo ls-is-cached lazyloaded" alt="pagofacil" width="32" height="20">
-                    <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/rapipago@2x.png"
-                        data-src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/rapipago@2x.png"
-                        class="icon-logo ls-is-cached lazyloaded" alt="rapipago" width="32" height="20">
-                </div>
-            </div>
-            <!--Links de Contacto-->
-            <div class="contactos">
-                <h2>CONTACTANOS</h2>
-                <div>
-                    <p>telefono:+5491144211032</p>
-                    <p>gmail:falcongaming@gmail.com</p>
-                </div>
-
-                <ul>
-                    <il>
-                        <a class="instagram" href="https://www.instagram.com/leivacecchi/"><svg
-                                xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
-                                class="bi bi-instagram" viewBox="0 0 16 16">
-                                <path
-                                    d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
-                            </svg></a>
-                    </il>
-                    <il>
-                        <a class="facebook" href="https://www.facebook.com/ezequiel.leivacecchi"><svg
-                                xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
-                                class="bi bi-facebook" viewBox="0 0 16 16">
-                                <path
-                                    d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
-                            </svg></a>
-                    </il>
-                    <il>
-                        <a class="twitter" href="https://twitter.com/LeivaCecchi"><svg
-                                xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
-                                class="bi bi-twitter" viewBox="0 0 16 16">
-                                <path
-                                    d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
-                            </svg></a>
-                    </il>
-                </ul>
-            </div>
-            <!-- enviar nuestras ofertas -->
-            <div class="ofertas">
-                <h2>Ingrese su e-mail para recibir todas las noticias y ofertas.</h2>
-                <input id="email-ofertas" type="email" placeholder="******@gmail.com">
-                <button class="suscribirse">Suscribirse</button>
-
-            </div>
+        <div class="hero-proof" aria-label="Características del proyecto">
+          <span><strong>24</strong> modelos</span>
+          <span><strong>3</strong> marcas</span>
+          <span><strong>0</strong> frameworks</span>
         </div>
-    </footer>
-    <!-- scrip de bootstrap
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
-        integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous">
-        </script> -->
-    <!-- script de js -->
-    <script src="js/navbar.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="js/products.js"></script>
-    <script src="js/footer.js"></script>
+      </div>
+
+      <div class="hero-product" id="heroProduct" aria-live="polite"></div>
+    </section>
+
+    <section class="brand-strip" aria-label="Marcas disponibles">
+      <div class="shell brand-strip-inner">
+        <span>LENOVO</span><i></i><span>ASUS</span><i></i><span>HP</span><i></i><span>JAVASCRIPT</span>
+      </div>
+    </section>
+
+    <section class="use-section shell" id="por-uso">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">Empezá por vos, no por la ficha técnica</span>
+          <h2>¿Para qué la necesitás?</h2>
+        </div>
+        <p>Elegí un perfil y el catálogo se filtra automáticamente.</p>
+      </div>
+
+      <div class="use-grid">
+        <button class="use-card" data-profile="Gaming" type="button">
+          <span class="use-number">01</span><b>Gaming</b><p>Potencia y líneas pensadas para jugar.</p><span>Ver opciones →</span>
+        </button>
+        <button class="use-card" data-profile="Trabajo" type="button">
+          <span class="use-number">02</span><b>Trabajo</b><p>Equipos sobrios para productividad diaria.</p><span>Ver opciones →</span>
+        </button>
+        <button class="use-card" data-profile="Creatividad" type="button">
+          <span class="use-number">03</span><b>Creatividad</b><p>Formatos versátiles y líneas premium.</p><span>Ver opciones →</span>
+        </button>
+        <button class="use-card" data-profile="Uso diario" type="button">
+          <span class="use-number">04</span><b>Uso diario</b><p>Opciones simples para estudiar y navegar.</p><span>Ver opciones →</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="catalog-section" id="catalogo">
+      <div class="shell">
+        <div class="section-heading catalog-heading">
+          <div>
+            <span class="eyebrow">Catálogo interactivo</span>
+            <h2>Encontrá tu equipo</h2>
+          </div>
+          <p id="resultsLabel">Cargando catálogo…</p>
+        </div>
+
+        <div class="catalog-toolbar">
+          <label class="search-field">
+            <span>Buscar</span>
+            <input id="searchInput" type="search" placeholder="Modelo o marca…" autocomplete="off">
+          </label>
+
+          <label>
+            <span>Marca</span>
+            <select id="brandFilter">
+              <option value="all">Todas</option>
+              <option value="Lenovo">Lenovo</option>
+              <option value="Asus">Asus</option>
+              <option value="HP">HP</option>
+            </select>
+          </label>
+
+          <label>
+            <span>Perfil</span>
+            <select id="profileFilter">
+              <option value="all">Todos</option>
+              <option value="Gaming">Gaming</option>
+              <option value="Trabajo">Trabajo</option>
+              <option value="Creatividad">Creatividad</option>
+              <option value="Uso diario">Uso diario</option>
+            </select>
+          </label>
+
+          <label>
+            <span>Ordenar</span>
+            <select id="sortFilter">
+              <option value="featured">Destacados</option>
+              <option value="price-asc">Menor precio</option>
+              <option value="price-desc">Mayor precio</option>
+              <option value="name">A–Z</option>
+            </select>
+          </label>
+
+          <button class="filter-reset" id="resetFilters" type="button">Limpiar</button>
+        </div>
+
+        <div class="active-filter" id="activeFilter" hidden></div>
+        <div class="product-grid" id="productGrid" aria-live="polite"></div>
+        <div class="empty-state" id="emptyState" hidden>
+          <span>⌕</span>
+          <h3>No encontramos esa notebook</h3>
+          <p>Probá con otra búsqueda o limpiá los filtros.</p>
+          <button class="button button-secondary" id="emptyReset" type="button">Ver todo</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="experience shell" id="experiencia">
+      <div class="experience-copy">
+        <span class="eyebrow">El proyecto, hoy</span>
+        <h2>De entrega de curso a experiencia de e-commerce.</h2>
+      </div>
+      <div class="experience-grid">
+        <article><span>01</span><h3>Catálogo único</h3><p>Una sola fuente de datos y lógica compartida para todas las marcas.</p></article>
+        <article><span>02</span><h3>Estado persistente</h3><p>Carrito y favoritos sobreviven a la recarga mediante localStorage.</p></article>
+        <article><span>03</span><h3>Comparador</h3><p>Seleccioná hasta tres equipos y contrastalos sin abandonar la página.</p></article>
+        <article><span>04</span><h3>Responsive real</h3><p>Interfaz pensada desde desktop hasta pantallas chicas, sin Bootstrap.</p></article>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="shell cta-inner">
+        <div><span class="eyebrow">¿Todavía dudando?</span><h2>Compará hasta tres modelos lado a lado.</h2></div>
+        <button class="button button-light" id="openCompareCta" type="button">Abrir comparador <b id="compareCountCta">0</b>/3</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <div>
+        <a class="brand footer-brand" href="#inicio"><span class="brand-mark">F</span><span><b>FALCON</b><small>LAB</small></span></a>
+        <p>Proyecto final de JavaScript reimaginado como storefront interactivo.</p>
+      </div>
+      <div><b>Explorar</b><a href="#catalogo">Catálogo</a><a href="#por-uso">Por uso</a><a href="#experiencia">Proyecto</a></div>
+      <div><b>Stack</b><span>HTML semántico</span><span>CSS moderno</span><span>JavaScript ES6+</span></div>
+      <div><b>Autor</b><a href="https://github.com/Ezequiel-Leiva-Cecchi" target="_blank" rel="noopener">Ezequiel Leiva Cecchi ↗</a><span>Buenos Aires, Argentina</span></div>
+    </div>
+    <div class="shell footer-bottom"><span>© <span id="currentYear"></span> Falcon Lab</span><span>Demo educativa · no procesa pagos reales</span></div>
+  </footer>
+
+  <div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true" aria-label="Carrito de compras">
+    <div class="drawer-head"><div><span class="eyebrow">Tu selección</span><h2>Carrito</h2></div><button class="close-button" id="closeCart" type="button" aria-label="Cerrar carrito">×</button></div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer">
+      <div class="cart-total"><span>Total ilustrativo</span><strong id="cartTotal">$0</strong></div>
+      <button class="button" id="checkoutButton" type="button">Finalizar demo</button>
+      <button class="text-button danger" id="clearCart" type="button">Vaciar carrito</button>
+    </div>
+  </aside>
+
+  <div class="compare-dock" id="compareDock" hidden>
+    <span><b id="compareCount">0</b> seleccionadas para comparar</span>
+    <div><button class="text-button" id="clearCompare" type="button">Limpiar</button><button class="button button-small" id="openCompare" type="button">Comparar</button></div>
+  </div>
+
+  <dialog class="product-dialog" id="productDialog">
+    <button class="dialog-close" data-close-dialog="productDialog" type="button" aria-label="Cerrar">×</button>
+    <div id="productDialogContent"></div>
+  </dialog>
+
+  <dialog class="compare-dialog" id="compareDialog">
+    <div class="dialog-header"><div><span class="eyebrow">Comparador</span><h2>Tus candidatos</h2></div><button class="dialog-close static" data-close-dialog="compareDialog" type="button" aria-label="Cerrar">×</button></div>
+    <div id="compareDialogContent"></div>
+  </dialog>
+
+  <div class="toast-region" id="toastRegion" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="js/app.js" defer></script>
 </body>
-
 </html>
